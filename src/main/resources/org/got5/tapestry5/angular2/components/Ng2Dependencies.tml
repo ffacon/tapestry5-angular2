@@ -1,0 +1,8 @@
+
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<script src="${asset:webjars:es6-shim:es6-shim.js}"></script>
+<script src="${asset:webjars:angular2:bundles/angular2-polyfills.js}"></script>
+<script src="${asset:webjars:systemjs:dist/system.src.js}"></script>
+<script src="${asset:webjars:rxjs:bundles/Rx.js}"></script>
+<script src="${asset:webjars:angular2:bundles/angular2.dev.js}"></script>
+</t:container>
