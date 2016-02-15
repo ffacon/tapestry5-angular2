@@ -89,11 +89,11 @@ public class Angular2JavascriptStack implements JavaScriptStack {
     }
 
     public List<String> getModules() {
-        return null;
+        return Collections.emptyList();
     }
 
     public JavaScriptAggregationStrategy getJavaScriptAggregationStrategy() {
-        return null;
+    	return org.apache.tapestry5.services.javascript.JavaScriptAggregationStrategy.COMBINE_AND_MINIMIZE;
     }
 
     public List<String> getStacks()
