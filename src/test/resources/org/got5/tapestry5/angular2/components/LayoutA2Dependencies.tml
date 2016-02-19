@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" 
+xmlns:p="tapestry:parameter"
+xmlns:a2="tapestry-library:angular2">
+<head>
+	<title>Tapestry 5 Angular2</title>
+	<a2:A2Dependencies />
+</head>
+<body data-spy="scroll" data-target=".bs-docs-sidebar" data-twttr-rendered="true">
+		<header class="navbar navbar-inverse">
+        <div class="container">
+            <nav class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                    	<t:pagelink t:page="index">Home</t:pagelink>           	
+                    </li>
+					<li>
+						<a href="https://github.com/got5/tapestry5-angular2">Download</a>
+					</li>
+					<li  class="last"><a href="http://twitter.com/#!/GOTapestry5">Twitter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+    	<t:body />
+    </div>
+     <footer class="footer">
+
+    </footer>
+	</body>
+</html>
