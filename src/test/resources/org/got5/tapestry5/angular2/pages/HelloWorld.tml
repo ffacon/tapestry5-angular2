@@ -1,0 +1,21 @@
+<html t:type="LayoutA2Dependencies"  
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<script>
+System.config({
+	packages: {
+		app: {
+			format: 'register',
+			defaultExtension: 'js' 
+			}
+			
+	}
+});
+System.import('modules/helloworld/app.js')
+	.then(null, console.error.bind(console));
+</script>
+
+<hello-world  > </hello-world>
+
+</html>
