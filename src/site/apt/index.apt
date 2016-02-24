@@ -1,0 +1,17 @@
+ ----
+ Module org.got5:tapestry5-angular2
+ ----
+
+org.got5:tapestry5-angular2 Documentation
+
+ ## Features
+
+This module for Apache Tapestry provides a collections of components and services that ease the use of the Angular2 framework.
+
+
+## To run the demo
+
+```bash
+mvn jetty:run
+```
+Application is now running in :(http://localhost:8080/)
