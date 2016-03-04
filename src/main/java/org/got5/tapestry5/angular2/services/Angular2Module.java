@@ -26,6 +26,7 @@ import org.apache.tapestry5.ioc.Resource;
 import org.apache.tapestry5.ioc.annotations.Autobuild;
 import org.apache.tapestry5.ioc.annotations.Contribute;
 import org.apache.tapestry5.ioc.annotations.Symbol;
+import org.apache.tapestry5.ioc.services.CoercionTuple;
 import org.apache.tapestry5.ioc.services.FactoryDefaults;
 import org.apache.tapestry5.ioc.services.SymbolProvider;
 import org.apache.tapestry5.services.LibraryMapping;
@@ -34,6 +35,8 @@ import org.apache.tapestry5.services.assets.StreamableResourceSource;
 import org.apache.tapestry5.services.javascript.JavaScriptModuleConfiguration;
 import org.apache.tapestry5.services.javascript.JavaScriptStack;
 import org.apache.tapestry5.services.javascript.ModuleManager;
+import org.apache.tapestry5.util.StringToEnumCoercion;
+import org.got5.tapestry5.angular2.A2Script;
 import org.got5.tapestry5.angular2.services.compiler.TSCompiler;
 import org.got5.tapestry5.angular2.services.javascript.Angular2JavascriptStack;
 
@@ -75,15 +78,18 @@ public class Angular2Module {
          @Path("webjars:systemjs:dist/system.src.js") final Resource systemjs, 
          @Path("webjars:rxjs:bundles/Rx.js") final Resource rx,
          @Path("webjars:angular2:bundles/angular2.dev.js") final Resource angular2_dev,
+         @Path("webjars:angular2:bundles/router.dev.js") final Resource router_dev,
+         @Path("webjars:angular2:bundles/http.dev.js") final Resource http_dev,
          @Path("webjars:typescript:lib/tsc.js") final Resource tsc,
          @Symbol(SymbolConstants.PRODUCTION_MODE) final boolean productionMode) {
 
        configuration.add("es6-shim", new JavaScriptModuleConfiguration(es6_shim));
-       configuration.add("angular2-polyfills", new JavaScriptModuleConfiguration(angular2_polyfills));
-       configuration.add("system", new JavaScriptModuleConfiguration(systemjs));
-       configuration.add("rx", new JavaScriptModuleConfiguration(rx));
-       configuration.add("angular2.dev", new JavaScriptModuleConfiguration(angular2_dev));
-       
+       configuration.add(A2Script.A2_POLYFILLS.text, new JavaScriptModuleConfiguration(angular2_polyfills));
+       configuration.add(A2Script.SYSTEM.text, new JavaScriptModuleConfiguration(systemjs));
+       configuration.add(A2Script.RX.text, new JavaScriptModuleConfiguration(rx));
+       configuration.add(A2Script.A2_ANGULAR.text, new JavaScriptModuleConfiguration(angular2_dev));
+       configuration.add(A2Script.A2_ROUTER.text, new JavaScriptModuleConfiguration(router_dev));
+       configuration.add(A2Script.A2_HTTP.text, new JavaScriptModuleConfiguration(http_dev));
        configuration.add("tsc", new JavaScriptModuleConfiguration(tsc));
        
        
@@ -99,5 +105,14 @@ public class Angular2Module {
 
      }
 	
-	
+     public static void contributeTypeCoercer(Configuration<CoercionTuple> configuration)
+     {
+        add(configuration, A2Script.class);
+     }
+      
+     private static <T extends Enum> void add(Configuration<CoercionTuple> configuration, Class<T> enumType)
+     {
+         configuration.add(CoercionTuple.create(String.class, enumType, StringToEnumCoercion.create(enumType)));
+     }
+
 }
