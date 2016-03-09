@@ -1,0 +1,11 @@
+<html t:type="LayoutA2Custom"  
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter"
+	xmlns:a2="tapestry-library:angular2">
+
+
+<a2:A2Component module="modules/helloworld/app.js" />
+
+<hello-world  > </hello-world>
+
+</html>
