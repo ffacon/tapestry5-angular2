@@ -12,6 +12,7 @@
 			</div>
 			<ul class="nav nav-list bs-docs-sidenav">
 				<li><a t:type="pagelink" t:page="HelloWorld" ><i class="icon-chevron-right"></i> HelloWorld</a></li>
+				<li><a t:type="pagelink" t:page="HelloWorld_A2Component" ><i class="icon-chevron-right"></i> HelloWorld with A2Component</a></li>
 			</ul>
 		</section>
 	</div>
