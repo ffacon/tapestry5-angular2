@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.got5</groupId>
 	<artifactId>tapestry5-angular2</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.1.0-beta-2</version>
 	<packaging>jar</packaging>
 	<name>Tapestry Angular2 Library</name>
 	<description>This Tapestry library provides a collections of components and mixin that ease the use of Angular2 framework.</description>
@@ -437,7 +437,7 @@
 	</profiles>
 
 	<properties>
-        <tapestry-release-version>5.4.0</tapestry-release-version>
+        <tapestry-release-version>5.4.1</tapestry-release-version>
         <selenium-version>2.35.0</selenium-version>
         <browserStartCommand>*googlechrome</browserStartCommand>
         <sourceDirectory>src/main/java</sourceDirectory>
