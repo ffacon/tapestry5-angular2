@@ -1,0 +1,39 @@
+<html t:type="LayoutA2Dependencies"  
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+<script>
+
+
+System.config({
+	packages: {
+		app: {
+			format: 'register',
+			defaultExtension: 'js' 
+			}
+			
+	}
+});
+System.import('../modules/ngbook2/redditApp.js')
+	.then(null, console.error.bind(console));
+</script>
+
+<!-- Menu Bar -->
+    <div class="ui menu">
+      <div class="ui container">
+        <a href="https://www.ng-book.com/2/" class="header item">
+          <img class="logo" src="${context:ngbook2/redditapp/resources/images/ng-book-2-minibook.png}" />
+          ng-book 2
+        </a>
+        <div class="header item borderless">
+          <h1 class="ui header">
+            Angular 2 Simple Reddit 
+          </h1>
+        </div>
+      </div>
+ 	</div>
+    <div class="ui main text container">
+      <reddit></reddit> <!-- Our app loads here! -->
+    </div>
+
+
+</html>
