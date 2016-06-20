@@ -1,0 +1,50 @@
+<html t:type="LayoutA2Dependencies"  
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+<script>
+
+
+System.config({
+	packages: {
+		app: {
+			format: 'register',
+			defaultExtension: 'js' 
+			}
+			
+	}
+});
+System.import('../modules/switch2ng2/tooltip.js')
+	.then(null, console.error.bind(console));
+</script>
+<style>
+    div[saTooltip] {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      background-color: red;
+    }
+    .tooltip {
+      position: absolute;
+      background: white;
+    }
+</style>
+
+<!-- Menu Bar -->
+    <div class="ui menu">
+      <div class="ui container">
+        <a href="https://www.packtpub.com/web-development/switching-angular-2" class="header item">
+          	Switching to Angular 2
+        </a>
+        <div class="header item borderless">
+          <h1 class="ui header">
+            Angular 2 Tooltip 
+          </h1>
+        </div>
+      </div>
+ 	</div>
+    <div class="ui main text container">
+      <app>tooltip</app>
+    </div>
+
+
+</html>
