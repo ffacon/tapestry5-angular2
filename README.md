@@ -16,7 +16,7 @@ For Tapestry 5.4 users:
 		<dependency>
 			<groupId>org.got5</groupId>
 			<artifactId>tapestry5-angular2</artifactId>
-			<version>0.1.0-beta-2</version>
+			<version>0.1.0-beta-17</version>
 		</dependency>
 		...
 	</dependencies>
@@ -73,6 +73,7 @@ You are now ready to start you Angular 2 application.
 
 
 ##Changelog related to Tapestry 5.4.x branch
+** 0.1.0-beta-17 : Update to use Angular 2 beta-17
 ** 0.1.0-beta-2 : Update to Tapestry 5.4.1 with Angular 2 beta-2
 
 ## Demo 
