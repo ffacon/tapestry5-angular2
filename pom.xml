@@ -325,37 +325,8 @@
 					</descriptorRefs>
 				</configuration>
 		    </plugin>
-            <plugin>
-                 <groupId>org.codehaus.mojo</groupId>
-                 <artifactId>cobertura-maven-plugin</artifactId>
-                 <version>2.5</version>
-                 <executions>
-	                       	<execution>
-	                       		<goals>
-	                       			<goal>clean</goal>
-	                       		</goals>
-	                       	</execution>
-                 </executions>
-					<configuration>
-						 <instrumentation>
-				            <excludes>
-				              <exclude>org/got5/tapestry5/angular2/*Constants.class</exclude>
-				            </excludes>
-         				 </instrumentation>
-					</configuration>
-             </plugin>
           </plugins>
 	</build>
-	<reporting>
-		<plugins>
-			<plugin>
-            	<groupId>org.codehaus.mojo</groupId>
-                <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.5</version>
-            </plugin>
-         	
-		</plugins>
-	</reporting>
     <repositories>
     	<repository>
 			<id>Apache Staging</id>
