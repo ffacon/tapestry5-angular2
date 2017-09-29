@@ -74,22 +74,26 @@ public class Angular2Module {
      @Contribute(ModuleManager.class)
      public static void setupJSModules(final MappedConfiguration<String, JavaScriptModuleConfiguration> configuration,
          @Path("webjars:es6-shim:es6-shim.js") final Resource es6_shim, 
-         @Path("webjars:angular2:bundles/angular2-polyfills.js") final Resource angular2_polyfills,
+         @Path("webjars:zone.js:$version/dist/zone.js") final Resource zoneJs,
+         @Path("webjars:reflect-metadata:$version/Reflect.js") final Resource reflectMetadata,
          @Path("webjars:systemjs:dist/system.src.js") final Resource systemjs, 
          @Path("webjars:rxjs:bundles/Rx.js") final Resource rx,
-         @Path("webjars:angular2:bundles/angular2.dev.js") final Resource angular2_dev,
-         @Path("webjars:angular2:bundles/router.dev.js") final Resource router_dev,
-         @Path("webjars:angular2:bundles/http.dev.js") final Resource http_dev,
+         @Path("webjars:angular__core:$version/bundles/core.umd.js") final Resource angular2,
+         @Path("webjars:angular__router:$version/bundles/router.umd.js") final Resource router,
+         @Path("webjars:angular__http:$version/bundles/http.umd.js") final Resource http,
+         @Path("webjars:angular__platform-browser-dynamic:$version/bundles/platform-browser-dynamic.umd.js") final Resource platformBrowserDynamicTesting,
          @Path("webjars:typescript:lib/tsc.js") final Resource tsc,
          @Symbol(SymbolConstants.PRODUCTION_MODE) final boolean productionMode) {
 
        configuration.add("es6-shim", new JavaScriptModuleConfiguration(es6_shim));
-       configuration.add(A2Script.A2_POLYFILLS.text, new JavaScriptModuleConfiguration(angular2_polyfills));
+       configuration.add(A2Script.ZONE_JS.text, new JavaScriptModuleConfiguration(zoneJs));
+       configuration.add(A2Script.REFLECT_METADATA.text, new JavaScriptModuleConfiguration(reflectMetadata));
        configuration.add(A2Script.SYSTEM.text, new JavaScriptModuleConfiguration(systemjs));
        configuration.add(A2Script.RX.text, new JavaScriptModuleConfiguration(rx));
-       configuration.add(A2Script.A2_ANGULAR.text, new JavaScriptModuleConfiguration(angular2_dev));
-       configuration.add(A2Script.A2_ROUTER.text, new JavaScriptModuleConfiguration(router_dev));
-       configuration.add(A2Script.A2_HTTP.text, new JavaScriptModuleConfiguration(http_dev));
+       configuration.add(A2Script.A2_ANGULAR.text, new JavaScriptModuleConfiguration(angular2));
+       configuration.add(A2Script.A2_ROUTER.text, new JavaScriptModuleConfiguration(router));
+       configuration.add(A2Script.A2_HTTP.text, new JavaScriptModuleConfiguration(http));
+       configuration.add(A2Script.A2_PLATFORM_BROWSER_DYNAMIC.text, new JavaScriptModuleConfiguration(platformBrowserDynamicTesting));
        configuration.add("tsc", new JavaScriptModuleConfiguration(tsc));
        
        

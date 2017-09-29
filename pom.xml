@@ -81,16 +81,45 @@
 		<dependency>
 			 <groupId>de.eddyson</groupId>
   			<artifactId>tapestry-webjars</artifactId>
-  			<version>0.9.3</version>
+  			<version>1.0.0</version>
 		</dependency>	
 		
 		<dependency>
     		<groupId>org.webjars.npm</groupId>
-    		<artifactId>angular2</artifactId>
-    		<version>2.0.0-beta.17</version>
+    		<artifactId>angular__core</artifactId>
+    		<version>4.3.2</version>
 		</dependency>
 		
-				
+		<dependency>
+    		<groupId>org.webjars.npm</groupId>
+    		<artifactId>angular__router</artifactId>
+    		<version>4.3.2</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.webjars.npm</groupId>
+    		<artifactId>angular__http</artifactId>
+    		<version>4.3.2</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.webjars.npm</groupId>
+    		<artifactId>angular__platform-browser-dynamic</artifactId>
+    		<version>4.3.2</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.webjars.npm</groupId>
+    		<artifactId>zone.js</artifactId>
+    		<version>0.8.16</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.webjars.npm</groupId>
+    		<artifactId>reflect-metadata</artifactId>
+    		<version>0.1.10</version>
+		</dependency>
+						
 		<dependency>
     		<groupId>org.webjars.npm</groupId>
     		<artifactId>es6-shim</artifactId>

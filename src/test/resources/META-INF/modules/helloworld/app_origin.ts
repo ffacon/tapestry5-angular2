@@ -1,5 +1,5 @@
-import { bootstrap } from "angular2/platform/browser";
-import { Component } from "angular2/core";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { Component } from "@angular/core";
 
 @Component({
   selector: 'hello-world',
@@ -12,4 +12,4 @@ import { Component } from "angular2/core";
 class HelloWorld {
 }
 
-bootstrap(HelloWorld);
+platformBrowserDynamic().bootstrapModule(HelloWorld);
