@@ -1,9 +1,10 @@
 
 <t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
 <t:if test="listEmpty">
-<script src="${asset:webjars:angular2:bundles/angular2-polyfills.js}"></script>
+<script src="${asset:webjars:zone.js:$version/dist/zone.js}"></script>
+<script src="${asset:webjars:reflect-metadata:$version/Reflect.js}"></script>
 <script src="${asset:webjars:systemjs:dist/system.src.js}"></script>
 <script src="${asset:webjars:rxjs:bundles/Rx.js}"></script>
-<script src="${asset:webjars:angular2:bundles/angular2.dev.js}"></script>
+<script src="${asset:webjars:angular__core:$version/bundles/core.umd.js}"></script>
 </t:if>
 </t:container>

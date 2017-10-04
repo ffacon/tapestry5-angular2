@@ -47,7 +47,8 @@ public class LayoutA2Custom
     }
     
     public List<String>  getList(){
-    	List<String> lst = Arrays.asList(A2Script.A2_POLYFILLS.text,
+    	List<String> lst = Arrays.asList(A2Script.ZONE_JS.text,
+            A2Script.REFLECT_METADATA.text,
     									 A2Script.SYSTEM.text,
     									 A2Script.RX.text, 
     									 A2Script.A2_ANGULAR.text,

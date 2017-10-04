@@ -39,27 +39,30 @@ public class Angular2JavascriptStack implements JavaScriptStack {
     private final AssetSource assetSource;
     
     private final Resource es6_shim; 
-    private final Resource angular2_polyfills;
+    private final Resource zoneJs;
+    private final Resource reflectMetadata;
     private final Resource systemjs;
     private final Resource rx;
-    private final Resource angular2_dev;	
+    private final Resource angular2;	
 
     public Angular2JavascriptStack(@Symbol(SymbolConstants.PRODUCTION_MODE)
                                    final boolean productionMode,
                                    @Path("webjars:es6-shim:es6-shim.js") final Resource es6_shim, 
-                                   @Path("webjars:angular2:bundles/angular2-polyfills.js") final Resource angular2_polyfills,
+                                   @Path("webjars:zone.js:$version/dist/zone.js") final Resource zoneJs,
+                                   @Path("webjars:reflect-metadata:$version/Reflect.js") final Resource reflectMetadata,
                                    @Path("webjars:systemjs:dist/system.src.js") final Resource systemjs, 
                                    @Path("webjars:rxjs:bundles/Rx.js") final Resource rx,
-                                   @Path("webjars:angular2:bundles/angular2.dev.js") final Resource angular2_dev,	
+                                   @Path("webjars:angular__core:$version/bundles/core.umd.js") final Resource angular2,	
                                    final AssetSource assetSource)
     {
         this.productionMode = productionMode;
         
         this.es6_shim = es6_shim; 
-        this.angular2_polyfills = angular2_polyfills;
+        this.zoneJs = zoneJs;
+        this.reflectMetadata = reflectMetadata;
         this.systemjs = systemjs;
         this.rx = rx;
-        this.angular2_dev = angular2_dev;
+        this.angular2 = angular2;
         
         this.assetSource = assetSource;
       
@@ -75,10 +78,11 @@ public class Angular2JavascriptStack implements JavaScriptStack {
     	final List<Asset> javaScriptStack = new ArrayList<Asset>();
 
     	javaScriptStack.add(assetSource.getUnlocalizedAsset(es6_shim.toString()));
-    	javaScriptStack.add(assetSource.getUnlocalizedAsset(angular2_polyfills.toString()));
+    	javaScriptStack.add(assetSource.getUnlocalizedAsset(zoneJs.toString()));
+        javaScriptStack.add(assetSource.getUnlocalizedAsset(reflectMetadata.toString()));
     	javaScriptStack.add(assetSource.getUnlocalizedAsset(systemjs.toString())); 
     	javaScriptStack.add(assetSource.getUnlocalizedAsset(rx.toString()));
-    	javaScriptStack.add(assetSource.getUnlocalizedAsset(angular2_dev.toString())); 
+    	javaScriptStack.add(assetSource.getUnlocalizedAsset(angular2.toString())); 
         
         return javaScriptStack;
     }
